@@ -1,0 +1,170 @@
+@import "../../../../styles/colors";
+nav{
+    background-color: $orange;
+    align-items: center;
+    padding: 10px 12px;
+    position: sticky;
+    width: 100%;
+    max-width: 1200px;
+    @media (min-width: 1200px)  {
+        background-color: transparent;
+    }
+    img{
+        height: auto;
+        width: 150px;
+    }
+    #burger{
+
+        height: 21px;
+        width: 40px;
+        z-index: 99;
+        cursor: pointer;
+        span {
+            display: flex;
+            height: 3px;
+            background-color: $black;
+            width: 100%;
+        }
+        &.menu-opened{
+            span{
+                background-color: transparent;
+                &:first-child,
+                &:last-child{
+                    display: flex;
+                    position: relative;
+                    background-color: $black;
+                    height: 3px;
+                    width: 40px;
+                    top: 9px;
+                    transform: rotate(45deg);
+                }
+                &:last-child{
+                    top: -9px;
+                    transform: rotate(-45deg);                    
+                }
+            }
+        }
+    }
+    #main-menu{
+        position: absolute;
+        width: 100vw;
+        max-height: 100vh;
+        background-color: $orange;
+        color: $black;
+        left: 100vw;
+        top: 0;
+        padding: 100px 20px;
+        font-size: 2.5rem;
+        gap: 3rem;
+        overflow-x: scroll;
+        line-height: 2rem;
+        &.show{
+            left: 0;
+        }
+        @media (min-width: 1200px)  {
+            background-color: transparent;
+            font-size: 1rem;
+            padding: 0px;
+            position: relative;    
+            height: auto;
+            left: auto;
+            top: auto;
+            overflow-x: visible;
+            &.show{
+                left: auto;
+            }
+        }
+        .option{
+            position: relative;
+            cursor: pointer;
+            @media (min-width: 1200px)  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .with-submenu{
+                width: fit-content;
+                position: relative;
+                padding-right: 40px;
+
+                @media (min-width: 1200px)  {
+                    padding-right: 20px;
+                }
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    border: 3px solid $black;
+                    border-top: none;
+                    border-left: none;
+                    right: 0;
+                    top:3px;                
+                    transform: rotate(45deg);
+
+                    @media (min-width: 1200px)  {
+                        height: 10px;
+                        width: 10px;
+                        border: 2px solid $black;
+                        border-top: none;
+                        border-left: none;
+                        top: 8px;     
+                    }
+
+                }
+            }
+            .submenu{
+                left: 0;
+                *{
+                    font-size: 1.5rem;
+                    padding: 15px 30px;
+                    border-bottom: 1px solid $black;
+                    &:first-child{
+                        padding-top: 40px;
+                    }
+                }
+
+                @media (min-width: 1200px)  {
+                    position: absolute;
+                    top: 43px;
+                    *{
+                        padding: 5px 15px;
+                        font-size: 1rem;
+                        border: 1px solid $black;
+                        border-top: none;
+                        min-width: max-content;
+                        &:first-child{
+                            border-top: 1px solid $black;
+                            padding-top: 5px;
+                        }
+                        &:hover{
+                            background-color: $black;
+                            color:$orange;
+                        }
+                    }
+                    &.collapsing{
+                        border-bottom: 1px solid $black;
+                    }
+                }
+            }
+            #lang-menu{
+                @media (min-width: 1200px)  {
+                    border: 1px solid $black;
+                    padding: 5px 35px 5px 15px;
+                    min-width: 140px;
+                    &::before{
+                        top: 14px;
+                        right: 15px;
+                    }
+                }
+            }
+            #submenu-2{
+                @media (min-width: 1200px)  {
+                    right: 0px;
+                }
+            }
+
+        }
+    }
+}

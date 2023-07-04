@@ -1,1 +1,46 @@
-<p>header works!</p>
+<nav class="d-flex justify-content-between">
+    <div id="logo">
+        <img src="../../../../assets/img/logo.svg"/>
+    </div>
+    <div id="burger" (click)="toggleMenu()" [ngClass]="{'menu-opened': showMenu}" class="d-flex d-xl-none flex-column justify-content-between">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="main-menu" [ngClass]="{'show': showMenu}" class="d-flex flex-column flex-xl-row justify-content-end align-item-center">
+        <div class="option" (click)="toggleMenu()">Sobre nosotros</div>
+        <div class="option" (click)="toggleMenu()">Mapa</div>
+        <div class="option">
+            <div class="with-submenu" data-bs-toggle="collapse" href="#submenu-1" aria-expanded="false" data-bs-target="#submenu-1">Recursos</div>
+            <div class="submenu collapse" id="submenu-1" data-bs-toggle="collapse" href="#submenu-1" aria-expanded="false" data-bs-target="#submenu-1">
+                <div (click)="toggleMenu()">
+                    OdourObservatory
+                </div>
+                <div (click)="toggleMenu()">
+                    D-NOSES
+                </div>
+                <div (click)="toggleMenu()">
+                    Science for Change
+                </div>
+            </div>
+        </div>
+        <div class="option" (click)="toggleMenu()">Blog</div>
+
+        <div class="option">
+            <div id="lang-menu" class="with-submenu" data-bs-toggle="collapse" href="#submenu-2" aria-expanded="false" data-bs-target="#submenu-2">
+                {{lang}}
+            </div>
+            <div class="submenu collapse" id="submenu-2" data-bs-toggle="collapse" href="#submenu-2" aria-expanded="false" data-bs-target="#submenu-2">
+                <div *ngIf="lang != 'Castellano'" (click)="toggleMenu(); selectLang('Castellano')">
+                    Castellano
+                </div>
+                <div *ngIf="lang != 'Català'" (click)="toggleMenu(); selectLang('Català')">
+                    Català
+                </div>
+                <div *ngIf="lang != 'English'" (click)="toggleMenu(); selectLang('English')">
+                    English
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
