@@ -2,14 +2,18 @@
 @import 'styles/colors';
 @import 'styles/fonts';
 
-html,
+html{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 body {
     min-height: 100vh;
     background-color: $white;
     background-image: url('assets/img/home-bg.png');
     background-size: cover;
     margin: 0;
-    padding: 0;
+    padding: 0 0 50px 0;
     color: $black;
     font-family: $main_font;
     app-root,
