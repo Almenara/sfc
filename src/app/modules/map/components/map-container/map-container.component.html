@@ -1,0 +1,60 @@
+<div class="flex-column container flex-md-row ">
+            <form class="d-flex flex-column gap-5">
+                <div class="d-flex flex-column flex-lg-row gap-4">
+                    <div class="d-flex flex-column col-12 col-lg-5 gap-2 flex-grow-1 ">
+                        <div>&nbsp;</div>
+                        <div class="d-flex flex-column flex-md-row gap-2">
+                            <div class="input-group">
+                                <span class="search-icon input-group-text"></span>
+                                <input name="location" type="search" class="form-control" placeholder="Ubicacion">
+                            </div>
+                            <div class="input-group">
+                                <input name="date-in" type="date" class="form-control">
+                                <input name="date-out" type="date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2 flex-grow-2 ">
+                        <div>Tipo de olor</div>
+                        <div class="form-group d-flex align-items-start flex-wrap gap-1">
+                            <input type="checkbox" class="btn-check" id="industrial" autocomplete="off">
+                            <label class="btn btn-sm check-btn" for="industrial">Industrial</label>
+
+                            <input type="checkbox" class="btn-check" id="urban" autocomplete="off">
+                            <label class="btn btn-sm check-btn" for="urban">Urbano</label>
+
+                            <input type="checkbox" class="btn-check" id="waste" autocomplete="off">
+                            <label class="btn btn-sm check-btn" for="waste">Residuos y aguas residuales</label>
+
+                            <input type="checkbox" class="btn-check" id="nature" autocomplete="off">
+                            <label class="btn btn-sm check-btn" for="nature">Campo y naturaleza</label>
+
+                            <input type="checkbox" class="btn-check" id="food" autocomplete="off">
+                            <label class="btn btn-sm check-btn" for="food">Comida</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    
+                    <div class="range-slider form-group">
+                        <label for="intensity" class="form-label d-flex justify-content-between"><span>Desde</span><span>Hasta</span></label>
+                        <input type="range" min="0" max="100" value="25" class="form-range slider-left">
+                        <input type="range" min="0" max="100" value="75" class="form-range slider-right">
+                        <small  class="d-flex form-text text-muted justify-content-center" >12:00 am - 11:59pm</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intensity" class="form-label">Intensidad</label>
+                        <input type="range" class="form-range" id="intensity">
+                        <small  class="d-flex form-text text-muted justify-content-end" >My débil</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pleasantness" class="form-label">Agradabilidad</label>
+                        <input type="range" class="form-range" id="pleasantness">
+                        <small  class="d-flex form-text text-muted justify-content-end">Extremadamente agradable</small>
+                    </div>
+
+                </div>
+            </form>
+</div>
