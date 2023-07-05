@@ -10,17 +10,20 @@ html{
 body {
     min-height: 100vh;
     background-color: $white;
-    background-image: url('assets/img/home-bg.png');
     background-size: cover;
     margin: 0;
     padding: 0 0 50px 0;
     color: $black;
     font-family: $main_font;
+    overflow-x: hidden;
     app-root,
     app-main{
         display: flex;
         flex-direction: column;
         height: 100%;
+    }
+    &.home-background{
+        background-image: url('assets/img/home-bg.png');
     }
 }
 
