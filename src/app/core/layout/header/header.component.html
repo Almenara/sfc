@@ -1,6 +1,6 @@
 <nav class="d-flex justify-content-between">
     <div id="logo">
-        <img src="../../../../assets/img/logo.svg"/>
+        <img [routerLink]="[ '/' ]" src="../../../../assets/img/logo.svg"/>
     </div>
     <div id="burger" (click)="toggleMenu()" [ngClass]="{'menu-opened': showMenu}" class="d-flex d-xl-none flex-column justify-content-between">
         <span></span>
@@ -9,7 +9,7 @@
     </div>
     <div id="main-menu" [ngClass]="{'show': showMenu}" class="d-flex flex-column flex-xl-row justify-content-end align-item-center">
         <div class="option" (click)="toggleMenu()">Sobre nosotros</div>
-        <div class="option" (click)="toggleMenu()">Mapa</div>
+        <div class="option" [routerLink]="[ '/map' ]" (click)="toggleMenu()">Mapa</div>
         <div class="option">
             <div class="with-submenu" data-bs-toggle="collapse" href="#submenu-1" aria-expanded="false" data-bs-target="#submenu-1">Recursos</div>
             <div class="submenu collapse" id="submenu-1" data-bs-toggle="collapse" href="#submenu-1" aria-expanded="false" data-bs-target="#submenu-1">

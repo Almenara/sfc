@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-map-container',
@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-container.component.scss']
 })
 export class MapContainerComponent implements OnInit {
+
+  constructor(private renderer: Renderer2) { }
+  
   ngOnInit() {
+
+    this.renderer.removeClass(document.body, 'home-background');
+
     const leftSlider = document.querySelector('.slider-left') as HTMLInputElement;
     const rightSlider = document.querySelector('.slider-right') as HTMLInputElement;
 
